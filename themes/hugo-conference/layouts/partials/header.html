@@ -1,0 +1,27 @@
+
+<header class="header">
+  <div class="wrapper">
+    <h1 class="logo-name">
+      <a class="logo-link" href="#" title="{{ .name }}" itemprop="name">{{ .name }}</a>
+    </h1>
+    <h2 class="tagline">{{ .date }}, {{ .city }}, {{ .state}}</h2>
+    <h2 class="tagline">{{ .organizers}}</h2>
+
+    <div class="call-action-area">
+      {{ with .price }}
+        <span class="price">{{ . }}</span>
+      {{ end }}
+
+      {{ with .calltoaction }}
+        <a href="{{ .link }}" class="call-action-link" target="_blank" title="{{ .text }}">{{ .text }}<br> <br> Students: $250 <br> Academic: $480 <br> Industry: $650 </a>
+      {{ end }}
+<!--
+      {{ with .calltoaction1 }}
+        <a href="{{ .link }}" class="call-action-link" target="_blank" title="{{ .text }}">{{ .text }} <br> (Closed July 23)</a>
+      {{ end }}
+-->
+    </div>
+  </div>
+</header>
+
+<hr>

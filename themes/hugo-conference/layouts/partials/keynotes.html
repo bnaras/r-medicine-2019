@@ -1,0 +1,21 @@
+<h2 class="section-title">{{ .titles.keynotes}}</h2>
+
+<ul class="keynotes-list">
+    <h3 class="speakers-name">
+      <a href="https://www.mayo.edu/research/faculty/therneau-terry-m-ph-d/bio-00025991"
+      target="_blank">Terry Therneau</a>, Faculty Member, Mayo Clinic
+    </h3>
+  </li>
+
+{{ range $speaker := .keynotes }}
+  <li class="speakers-item" itemprop="performer" itemscope itemtype="http://schema.org/Person">
+
+    <h3 class="keynotes-name">{{ .name }}
+      {{ with .link }}
+      <a href="{{ .href }}" target="_blank" title="{{ .text }}"> {{ .text }} </a>
+      {{ end }}
+    </h3>
+    <p class="speakers-bio">{{ .bio }}</p>
+  </li>
+{{ end }}
+</ul>
